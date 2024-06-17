@@ -1,0 +1,8 @@
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "never", // always：导致 return 之后的代码被自动删除
+    "source.organizeImports": "always"
+  }
+}
