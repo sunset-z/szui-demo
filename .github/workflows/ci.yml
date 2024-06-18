@@ -11,30 +11,22 @@ jobs:
       - name: Checkout 🛎️
         uses: actions/checkout@v4
 
-      - name: Install and Build 🔧 # This example project is built using npm and outputs the result to the 'build' folder. Replace with the commands required to build your project, or remove this step entirely if your site is pre-built.
-        run: |
-          npm install
-          npm run build
+      - name: Install Packages 💦
+        run: yarn
 
-      - name: Deploy 🚀
+      - name: Main Build 🔧
+        run: yarn build
+
+      - name: Main Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: build # The folder the action should deploy.
           ssh-key: ${{ secrets.PRIVATE_KEY }}
 
-  docs-build-and-deploy:
-    concurrency: ci-${{ github.ref }}
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout 🛎️
-        uses: actions/checkout@v4
+      - name: Docs Build 🔧
+        run: yarn docs:build
 
-      - name: Install and Build 🔧 # This example project is built using npm and outputs the result to the 'build' folder. Replace with the commands required to build your project, or remove this step entirely if your site is pre-built.
-        run: |
-          npm install
-          npm run docz:build
-
-      - name: Deploy 🚀
+      - name: Docs Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: .docz/dist # The folder the action should deploy.
