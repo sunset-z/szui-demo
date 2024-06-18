@@ -30,8 +30,8 @@
     "prettier": "prettier --write .",
     "prepare": "husky",
     "docz:dev": "docz dev",
-    "docz:build": "docz build",
-    "docz:serve": "docz build && docz serve"
+    "docz:build:local": "docz build --config doczrc.local.js",
+    "docz:build": "docz build"
   },
   "eslintConfig": {
     "extends": [
