@@ -1,8 +1,15 @@
 {
   "name": "szui-demo",
-  "version": "0.1.0",
-  "private": true,
-  "homepage": "./",
+  "version": "0.1.1",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sunset-z/szui-demo"
+  },
+  "main": "es/index.js",
+  "files": [
+    "es"
+  ],
   "dependencies": {
     "@emotion/core": "10.1.1",
     "@testing-library/jest-dom": "^5.14.1",
@@ -31,7 +38,9 @@
     "prepare": "husky",
     "docz:dev": "docz dev",
     "docz:build:local": "docz build --config doczrc.local.js",
-    "docz:build": "docz build"
+    "docz:build": "docz build",
+    "build:css": "node scripts/build-less.js",
+    "build:es": "yarn build:css && babel src/components --out-dir es --extensions \".ts,.tsx,.js,.jsx\" --ignore \".mdx\""
   },
   "eslintConfig": {
     "extends": [
@@ -58,10 +67,14 @@
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@babel/preset-env": "^7.24.7",
+    "@babel/preset-react": "^7.24.7",
+    "@babel/preset-typescript": "^7.24.7",
     "@commitlint/cli": "^19.3.0",
     "@commitlint/config-conventional": "^19.2.2",
     "@craco/craco": "^7.1.0",
     "@craco/types": "^7.1.0",
+    "babel-plugin-module-resolver": "^5.0.2",
     "husky": "^9.0.11",
     "prettier": "3.3.2"
   }
