@@ -23,13 +23,13 @@ jobs:
           folder: build # The folder the action should deploy.
           ssh-key: ${{ secrets.PRIVATE_KEY }}
 
-      - name: Docs Build 🔧
+      - name: Docz Build 🔧
         run: yarn docz:build
 
-      - name: Docs Deploy 🚀
+      - name: Docz Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: .docz/dist # The folder the action should deploy.
           ssh-key: ${{ secrets.PRIVATE_KEY }}
           branch: gh-pages
-          target-folder: docs
+          target-folder: docz
