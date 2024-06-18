@@ -24,7 +24,7 @@ jobs:
           ssh-key: ${{ secrets.PRIVATE_KEY }}
 
       - name: Docs Build 🔧
-        run: yarn docs:build
+        run: yarn docz:build
 
       - name: Docs Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
