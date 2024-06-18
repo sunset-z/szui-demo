@@ -21,7 +21,6 @@ jobs:
 
       - name: Publish to npm 🚀
         run: |
-          npm adduser
           npm whoami
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
