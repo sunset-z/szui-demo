@@ -20,6 +20,6 @@ jobs:
       #   run: yarn build:es
 
       - name: Publish to npm 🚀
-        run: echo $NPM_TOKEN
+        run: echo $NODE_AUTH_TOKEN
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
