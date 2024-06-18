@@ -17,14 +17,14 @@ jobs:
       - name: Main Build 🔧
         run: yarn build
 
+      - name: Docz Build 🔧
+        run: yarn docz:build
+
       - name: Main Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: build # The folder the action should deploy.
           ssh-key: ${{ secrets.PRIVATE_KEY }}
-
-      - name: Docz Build 🔧
-        run: yarn docz:build
 
       - name: Docz Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
