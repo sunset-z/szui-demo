@@ -1,6 +1,6 @@
 {
   "name": "szui-components-demo",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "private": false,
   "repository": {
     "type": "git",
@@ -9,7 +9,8 @@
   "license": "MIT",
   "main": "es/index.js",
   "files": [
-    "dist/*"
+    "es",
+    "typings"
   ],
   "types": "typings/index.d.ts",
   "dependencies": {
@@ -43,7 +44,11 @@
     "docz:build": "docz build",
     "build:css": "node scripts/build-less.js",
     "build:ts": "node scripts/build-ts.js",
-    "build:npm": "yarn build:css && yarn build:ts && babel src/components --out-dir dist/es --extensions \".ts,.tsx,.js,.jsx\" --ignore \".mdx\""
+    "build:es": "babel src/components --out-dir dist/es --extensions \".ts,.tsx,.js,.jsx\" --ignore \".mdx\"",
+    "build:npm": "yarn build:css && yarn build:ts && yarn build:es",
+    "prepack": "cp -r dist/* .",
+    "postpack": "rm -rf es typings",
+    "clean": "rm es && rm typings"
   },
   "eslintConfig": {
     "extends": [
