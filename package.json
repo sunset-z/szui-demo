@@ -4,7 +4,7 @@
   "private": false,
   "repository": {
     "type": "git",
-    "url": "https://github.com/sunset-z/szui-demo"
+    "url": "git+https://github.com/sunset-z/szui-demo.git"
   },
   "main": "es/index.js",
   "files": [
