@@ -1,7 +1,7 @@
 module.exports = {
   presets: [
     '@babel/preset-env',
-    ["@babel/preset-react", { "runtime": "automatic" }],
+    ['@babel/preset-react', { runtime: 'automatic' }],
     '@babel/preset-typescript',
   ],
   plugins: [
@@ -12,6 +12,6 @@ module.exports = {
         extensions: ['.js', '.jsx', '.ts', '.tsx', '.css'],
       },
     ],
-    './babel-plugin-replace-ext.js'
+    './babel-plugin-replace-ext.js',
   ],
 };
