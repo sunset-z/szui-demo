@@ -13,12 +13,15 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": true,
     "jsx": "react-jsx",
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"]
-    }
+    },
+    "outDir": "dist",
+    "declaration": true,
+    "declarationDir": "dist/typings",
+    "emitDeclarationOnly": true
   },
-  "include": ["src"]
+  "include": ["src/components"]
 }

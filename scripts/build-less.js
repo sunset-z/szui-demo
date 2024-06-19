@@ -20,7 +20,7 @@ glob('src/components/**/*.less', (err, files) => {
     console.error(err);
   } else {
     files.forEach(file => {
-      const distPath = file.replace('src/components/', 'es/').replace('.less', '.css');
+      const distPath = file.replace('src/components/', 'dist/es/').replace('.less', '.css');
       const distDir = path.dirname(distPath);
       if (!fs.existsSync(distDir)) {
         fs.mkdirSync(distDir, { recursive: true });

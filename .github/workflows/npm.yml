@@ -23,7 +23,7 @@ jobs:
         run: yarn
 
       - name: Build package 🔧
-        run: yarn build:es
+        run: yarn build:npm
 
       - name: Publish to npm 🚀
         run: npm publish
